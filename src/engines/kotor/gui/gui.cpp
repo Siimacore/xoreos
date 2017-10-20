@@ -127,7 +127,7 @@ void GUI::loadWidget(const Aurora::GFF3Struct &strct, Widget *parent,
 
 	// Go down to the children
 	if (ctx.strct->hasField("CONTROLS")) {
-		const Aurora::GFF3List &children = ctx.strct->getList("CONTROLS");
+			const Aurora::GFF3List &children = ctx.strct->getList("CONTROLS");
 
 		for (Aurora::GFF3List::const_iterator c = children.begin(); c != children.end(); ++c)
 			loadWidget(**c, ctx.widget, width, height);

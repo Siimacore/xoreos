@@ -46,7 +46,11 @@ public:
 	virtual void calculateDistance();
 
 	void render(RenderPass pass);
+	TextureHandle getEdgeTexture() const;
+	TextureHandle getCornerTexture() const;
 
+	void setEdgeTexture(const TextureHandle &edge);
+	void setCornerTexture(const TextureHandle &corner);
 private:
 	TextureHandle _edge, _corner;
 

@@ -75,6 +75,7 @@ void BorderQuad::setSize(float w, float h) {
 void BorderQuad::calculateDistance() {
 }
 
+
 void BorderQuad::render(RenderPass pass) {
 	bool isTransparent = (!_corner.empty() && _corner.getTexture().hasAlpha()) ||
 	                     (!_edge.empty() && _edge.getTexture().hasAlpha());
@@ -182,6 +183,23 @@ void BorderQuad::render(RenderPass pass) {
 	glVertex2f(_x + _cornerWidth, _y + _h);
 	glEnd();
 }
+
+TextureHandle BorderQuad::getEdgeTexture() const {
+	return _edge;
+}
+
+TextureHandle BorderQuad::getCornerTexture() const {
+	return _corner;
+}
+
+void BorderQuad::setCornerTexture(const TextureHandle &corner) {
+	_corner = corner;
+}
+
+void BorderQuad::setEdgeTexture(const TextureHandle &edge) {
+	_edge = edge;
+}
+
 
 } // End of namespace Aurora
 

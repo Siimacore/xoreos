@@ -146,6 +146,9 @@ TextureHandle TextureManager::add(Texture *texture, Common::UString name) {
 TextureHandle TextureManager::get(Common::UString name) {
 	Common::StackLock lock(_mutex);
 
+	if(name.empty())
+		return TextureHandle();
+
 	if (_bogusTextures.find(name) != _bogusTextures.end())
 		return TextureHandle();
 

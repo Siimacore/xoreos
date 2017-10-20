@@ -80,6 +80,9 @@ void WidgetButton::load(const Aurora::GFF3Struct &gff) {
 	if (getTextHighlightableComponent() != 0) {
 		  setDefaultHighlighting(getTextHighlightableComponent());
 	}
+	if (getBorderHighlightableComponent() != 0){
+		setDefaultHighlighting(getBorderHighlightableComponent());
+	}
 	if (getQuadHighlightableComponent() != 0) {
 		  setDefaultHighlighting(getQuadHighlightableComponent());
 	}
@@ -138,6 +141,10 @@ void WidgetButton::startHighlight() {
 		getQuadHighlightableComponent()->setHighlighted(true);
 	}
 
+	if (getBorderHighlightableComponent() && getBorderHighlightableComponent()->isHighlightable()) {
+		getBorderHighlightableComponent()->setHighlighted(true);
+	}
+
 	_highlighted = true;
 }
 
@@ -149,6 +156,9 @@ void WidgetButton::stopHighlight() {
 	if (getQuadHighlightableComponent() && getQuadHighlightableComponent()->isHighlightable()) {
 		getQuadHighlightableComponent()->setHighlighted(false);
 		_quad->setColor(_unselectedR, _unselectedG, _unselectedB, _unselectedA);
+	}
+	if(getBorderHighlightableComponent() && getBorderHighlightableComponent()->isHightlighted()){
+		getBorderHighlightableComponent()->setHighlighted(false);
 	}
 
 	_highlighted = false;
