@@ -27,6 +27,7 @@
 
 #include "src/sound/types.h"
 
+#include "src/graphics/aurora/texture.h"
 #include "src/engines/kotor/gui/widgets/kotorwidget.h"
 
 namespace Engines {
@@ -51,6 +52,9 @@ public:
 	virtual void enter();
 
 	virtual void leave();
+
+	void setHighlightCornerTexture();
+	void setHighlightEdgeTexture();
 
 private:
 	bool _permanentHighlight;

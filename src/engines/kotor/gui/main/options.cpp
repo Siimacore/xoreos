@@ -89,6 +89,13 @@ void OptionsMenu::adoptChanges() {
 	dynamic_cast<OptionsGameplayMenu &>(*_gameplay).adoptChanges();
 }
 
+void OptionsMenu::initWidget(Widget &widget) {
+	if(widget.getTag().beginsWith("BTN_")){
+		((WidgetButton&) widget).setHighlightCornerTexture();
+		((WidgetButton&) widget).setHighlightEdgeTexture();
+	}
+}
+
 
 } // End of namespace KotOR
 

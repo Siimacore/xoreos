@@ -31,6 +31,9 @@
 #include "src/graphics/aurora/guiquad.h"
 #include "src/graphics/aurora/text.h"
 #include "src/graphics/aurora/highlightabletext.h"
+#include "src/graphics/aurora/highlightableborder.h"
+#include "src/graphics/aurora/textureman.h"
+
 
 #include "src/engines/aurora/util.h"
 #include "src/engines/kotor/gui/widgets/button.h"
@@ -169,6 +172,18 @@ void WidgetButton::setDefaultHighlighting(Graphics::Aurora::Highlightable *highl
 	highlightable->setHighlightDelta(0, 0, 0, .05);
 	highlightable->setHighlightLowerBound(1, 1, 0, .2);
 	highlightable->setHighlightUpperBound(1, 1, 0, 1);
+}
+
+void WidgetButton::setHighlightCornerTexture() {
+	if(getBorderHighlightableComponent() != 0){
+		((Graphics::Aurora::HighlightableBorder*) getBorderHighlightableComponent())->setHighlightCornerTexture(TextureMan.get("boxline5"));
+	}
+}
+
+void WidgetButton::setHighlightEdgeTexture() {
+	if(getBorderHighlightableComponent() != 0){
+		((Graphics::Aurora::HighlightableBorder*) getBorderHighlightableComponent())->setHighlightEdgeTexture(TextureMan.get("boxline6"));
+	}
 }
 
 } // End of namespace KotOR

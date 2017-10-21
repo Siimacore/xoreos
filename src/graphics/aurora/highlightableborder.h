@@ -17,6 +17,9 @@ namespace Graphics {
 
             void render(RenderPass pass);
 
+            void setHighlightCornerTexture(const TextureHandle& corner);
+            void setHighlightEdgeTexture(const TextureHandle& edge);
+
         private:
             TextureHandle _cornerH;
             TextureHandle _edgeH;
