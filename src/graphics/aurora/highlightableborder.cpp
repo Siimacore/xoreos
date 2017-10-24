@@ -1,10 +1,9 @@
 //
-// Created by aqueiros on 18/10/17.
+// Created by Siimacore on 24/10/17.
 //
 
-#include "src/graphics/aurora/highlightableborder.h"
 #include "src/graphics/aurora/textureman.h"
-
+#include "highlightableborder.h"
 
 namespace Graphics {
 

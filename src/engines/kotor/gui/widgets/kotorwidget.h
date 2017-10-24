@@ -136,6 +136,8 @@ protected:
 	Text   createText  (const Aurora::GFF3Struct &gff);
 
     Border createHighlightBorder(const Aurora::GFF3Struct &gff);
+
+	Border createHighlightedBorder(const Aurora::GFF3Struct &gff);
 };
 
 } // End of namespace KotOR

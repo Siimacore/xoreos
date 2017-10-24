@@ -25,14 +25,12 @@
 #include "src/engines/aurora/widget.h"
 
 #include "src/engines/kotor/gui/main/options.h"
-#include "src/engines/kotor/gui/options/gameplay.h"
 #include "src/engines/kotor/gui/options/feedback.h"
 #include "src/engines/kotor/gui/options/autopause.h"
 #include "src/engines/kotor/gui/options/graphics.h"
 #include "src/engines/kotor/gui/options/sound.h"
 
 #include "src/engines/kotor/gui/widgets/button.h"
-#include "src/engines/kotor/gui/widgets/kotorwidget.h"
 
 namespace Engines {
 
@@ -50,6 +48,13 @@ OptionsMenu::OptionsMenu(::Engines::Console *console) : GUI(console) {
 }
 
 OptionsMenu::~OptionsMenu() {
+}
+
+void OptionsMenu::initWidget(Widget &widget) {
+	if(widget.getTag().beginsWith("BTN_")){
+		((WidgetButton&) widget).setHighlightCornerTexture();
+		((WidgetButton&) widget).setHighlightEdgeTexture();
+	}
 }
 
 void OptionsMenu::callbackActive(Widget &widget) {
@@ -87,13 +92,6 @@ void OptionsMenu::callbackActive(Widget &widget) {
 
 void OptionsMenu::adoptChanges() {
 	dynamic_cast<OptionsGameplayMenu &>(*_gameplay).adoptChanges();
-}
-
-void OptionsMenu::initWidget(Widget &widget) {
-	if(widget.getTag().beginsWith("BTN_")){
-		((WidgetButton&) widget).setHighlightCornerTexture();
-		((WidgetButton&) widget).setHighlightEdgeTexture();
-	}
 }
 
 

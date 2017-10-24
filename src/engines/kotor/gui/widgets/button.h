@@ -26,8 +26,7 @@
 #define ENGINES_KOTOR_GUI_WIDGETS_BUTTON_H
 
 #include "src/sound/types.h"
-
-#include "src/graphics/aurora/texture.h"
+#include "src/graphics/aurora/highlightableborder.h"
 #include "src/engines/kotor/gui/widgets/kotorwidget.h"
 
 namespace Engines {
@@ -43,6 +42,9 @@ public:
 	void setDisableHighlight(bool);
 	void setDisableHoverSound(bool);
 
+	void setHighlightCornerTexture();
+	void setHighlightEdgeTexture();
+
 	virtual void load(const Aurora::GFF3Struct &gff);
 
 	void mouseUp(uint8 state, float x, float y);
@@ -52,9 +54,6 @@ public:
 	virtual void enter();
 
 	virtual void leave();
-
-	void setHighlightCornerTexture();
-	void setHighlightEdgeTexture();
 
 private:
 	bool _permanentHighlight;
