@@ -47,6 +47,13 @@ public:
 
 	void render(RenderPass pass);
 
+	const TextureHandle getEdgeTexture() const;
+
+	const TextureHandle getCornerTexture() const;
+
+	void setEdgeTexture(const TextureHandle &edge);
+	void setCornerTexture(const TextureHandle &corner);
+
 private:
 	TextureHandle _edge, _corner;
 

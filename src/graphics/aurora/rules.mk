@@ -37,6 +37,7 @@ src_graphics_aurora_libaurora_la_SOURCES += \
     src/graphics/aurora/fonthandle.h \
     src/graphics/aurora/fontman.h \
     src/graphics/aurora/highlightable.h \
+    src/graphics/aurora/highlightableborder.h \
     src/graphics/aurora/text.h \
     src/graphics/aurora/highlightabletext.h \
     src/graphics/aurora/fps.h \
@@ -73,6 +74,7 @@ src_graphics_aurora_libaurora_la_SOURCES += \
     src/graphics/aurora/fonthandle.cpp \
     src/graphics/aurora/fontman.cpp \
     src/graphics/aurora/highlightable.cpp \
+    src/graphics/aurora/highlightableborder.cpp \
     src/graphics/aurora/text.cpp \
     src/graphics/aurora/highlightabletext.cpp \
     src/graphics/aurora/fps.cpp \

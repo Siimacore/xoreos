@@ -44,6 +44,7 @@ public:
 
 protected:
 	void callbackActive(Widget &widget);
+	void initWidget(Widget &widget);
 
 private:
 	void adoptChanges();

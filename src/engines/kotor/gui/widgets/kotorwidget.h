@@ -33,6 +33,7 @@
 #include "src/graphics/aurora/types.h"
 #include "src/graphics/aurora/highlightable.h"
 #include "src/graphics/aurora/highlightabletext.h"
+#include "src/graphics/aurora/highlightableborder.h"
 #include "src/graphics/aurora/borderquad.h"
 
 #include "src/engines/aurora/widget.h"
@@ -114,6 +115,7 @@ protected:
 
 	Graphics::Aurora::Highlightable *getTextHighlightableComponent() const;
 	Graphics::Aurora::Highlightable *getQuadHighlightableComponent() const;
+	Graphics::Aurora::Highlightable *getBorderHighlightableComponent() const;
 
 	float _width;
 	float _height;
@@ -133,6 +135,7 @@ protected:
 	Extend createExtend(const Aurora::GFF3Struct &gff);
 	Border createBorder(const Aurora::GFF3Struct &gff);
 	Text   createText  (const Aurora::GFF3Struct &gff);
+	Border createHighlightedBorder(const Aurora::GFF3Struct &gff);
 };
 
 } // End of namespace KotOR

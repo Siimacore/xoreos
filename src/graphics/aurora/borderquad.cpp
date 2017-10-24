@@ -183,6 +183,22 @@ void BorderQuad::render(RenderPass pass) {
 	glEnd();
 }
 
+const TextureHandle BorderQuad::getEdgeTexture() const {
+	return _edge;
+}
+
+const TextureHandle BorderQuad::getCornerTexture() const {
+	return _corner;
+}
+
+void BorderQuad::setEdgeTexture(const TextureHandle &edge) {
+	_edge = edge;
+}
+
+void BorderQuad::setCornerTexture(const TextureHandle &corner) {
+	_corner = corner;
+}
+
 } // End of namespace Aurora
 
 } // End of namespace Graphics
